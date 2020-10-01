@@ -49,7 +49,7 @@ void igvEscena3D::visualizar(int escena) {
 	  // se pintan los ejes
 	if (ejes) pintar_ejes();
 
-	// Escena seleccionada a través del menú (click botón derecho)
+	// Escena seleccionada a travï¿½s del menï¿½ (click botï¿½n derecho)
 	if (escena == EscenaA) renderEscenaA();
 	else if (escena == EscenaB) renderEscenaB();
 	else if (escena == EscenaC) renderEscenaC();
@@ -59,14 +59,42 @@ void igvEscena3D::visualizar(int escena) {
 }
 
 void igvEscena3D::renderEscenaA() {
+
+
+//    glPushMatrix();
+//    GLfloat color_pieza2[] = { 0,0.55,0 };
+//    glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza2);
+//    glTranslatef(0,-2,0);
+//    glutSolidCube(1);
+//    glPopMatrix();
+//
+//
 	GLfloat color_pieza[] = { 0,0.25,0 };
 
 	// Practica 2a. Parte A.
 	glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza);
 
-	glPushMatrix();
-	glutSolidCube(1);
-	glPopMatrix();
+//	glPushMatrix();
+//    glRotatef(90,1,0,0);
+//
+//    glTranslatef(0,2,0);
+//
+//	glScalef(1,1,2);
+//
+//	glutSolidCube(1);
+//
+//    glPopMatrix();
+
+
+    glPushMatrix();
+
+    glRotatef(90,1,0,0);
+    glTranslatef(0,1,0);
+    glScalef(1,1,2);
+    glutSolidCube(1);
+    glPopMatrix();
+
+
 }
 
 void igvEscena3D::renderEscenaB() {
