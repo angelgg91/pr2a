@@ -59,53 +59,24 @@ void igvEscena3D::visualizar(int escena) {
 }
 
 void igvEscena3D::renderEscenaA() {
+    pintarCaja();
 
-
-//    glPushMatrix();
-//    GLfloat color_pieza2[] = { 0,0.55,0 };
-//    glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza2);
-//    glTranslatef(0,-2,0);
-//    glutSolidCube(1);
-//    glPopMatrix();
-//
-//
-	GLfloat color_pieza[] = { 0,0.25,0 };
-
-	// Practica 2a. Parte A.
-	glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza);
-
-//	glPushMatrix();
-//    glRotatef(90,1,0,0);
-//
-//    glTranslatef(0,2,0);
-//
-//	glScalef(1,1,2);
-//
-//	glutSolidCube(1);
-//
-//    glPopMatrix();
-
-
-    glPushMatrix();
-
-    glRotatef(90,1,0,0);
-    glTranslatef(0,1,0);
-    glScalef(1,1,2);
-    glutSolidCube(1);
-    glPopMatrix();
 
 
 }
 
 void igvEscena3D::renderEscenaB() {
-	GLfloat color_pieza[] = { 0,0,0.5 };
 
-	// Practica 2a. Parte B.
-	glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza);
+    pintarCaja();
+    int mov = 1;
+    for (int i= 0; i< 2; i++){
+        glPushMatrix();
+        glTranslatef(0,mov++,0);
+        pintarCaja();
+        glPopMatrix();
+    }
 
-	glPushMatrix();
-	glutSolidCube(1);
-	glPopMatrix();
+
 }
 
 
@@ -121,5 +92,24 @@ void igvEscena3D::renderEscenaC() {
 }
 
 
+void igvEscena3D::pintarCaja() {
+    GLfloat color_pieza[] = { 0,0.25,0 };
 
+    // Practica 2a. Parte A.
+
+    glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza);
+    glPushMatrix();
+
+    glPushMatrix();
+    glTranslatef(0,0.35,0);
+    glScalef(4,1,7);
+    glutSolidCube(0.3);
+    glPopMatrix();
+
+    glScalef(1,1,2);
+    glutSolidCube(1);
+
+    glPopMatrix();
+
+}
 

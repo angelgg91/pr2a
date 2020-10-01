@@ -30,8 +30,8 @@ class igvEscena3D {
 		igvEscena3D();
 		~igvEscena3D();
 
-		// Métodos
-		// método con las llamadas OpenGL para visualizar la escena
+		// Mï¿½todos
+		// mï¿½todo con las llamadas OpenGL para visualizar la escena
         void visualizar(int escena);
 
 		bool get_ejes() {return ejes;};
@@ -41,7 +41,7 @@ class igvEscena3D {
         void renderEscenaA();
         void renderEscenaB();
 		void renderEscenaC();
-
+        void pintarCaja();
 };
 
 #endif
