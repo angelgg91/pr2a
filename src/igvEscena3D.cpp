@@ -5,7 +5,7 @@
 
 // Metodos constructores -----------------------------------
 
-igvEscena3D::igvEscena3D() { ejes = true; }
+igvEscena3D::igvEscena3D() { ejes = true; instanciasYsceneB = 3; instanciasX = 1;  instanciasZ = 1;instanciasY = 2;}
 
 igvEscena3D::~igvEscena3D() {}
 
@@ -66,12 +66,12 @@ void igvEscena3D::renderEscenaA() {
 }
 
 void igvEscena3D::renderEscenaB() {
+    int desplazamiento = 0;
 
-    pintarCaja();
-    int mov = 1;
-    for (int i= 0; i< 2; i++){
+
+    for (int i= 0; i < instanciasYsceneB; i++){
         glPushMatrix();
-        glTranslatef(0,mov++,0);
+        glTranslatef(0,desplazamiento++,0);
         pintarCaja();
         glPopMatrix();
     }
@@ -81,14 +81,53 @@ void igvEscena3D::renderEscenaB() {
 
 
 void igvEscena3D::renderEscenaC() {
-	GLfloat color_pieza[] = { 0.5,0,0 };
+    float desplazamientoY = 1 , desplazamientoZ = 0;
+    float desplazamientoX;
+    desplazamientoX = 0;
+    for ( int x = 0; x < instanciasX; x++) {
+        desplazamientoY = 0;
+        desplazamientoZ = 0;
+        for (int z = 0; z < instanciasZ; z++) {
+            desplazamientoY = 0;
+            glPushMatrix();
+            glTranslatef(desplazamientoX, desplazamientoY, desplazamientoZ);
+            pintarCaja();
+            glPopMatrix();
+            desplazamientoY = 1;
 
-	// Practica 2a. Parte C.
-	glMaterialfv(GL_FRONT, GL_EMISSION, color_pieza);
+            for (int y = 0; y < instanciasY; y++) {
+                glPushMatrix();
+                glTranslatef(desplazamientoX, desplazamientoY++, desplazamientoZ);
+                pintarCaja();
+                glPopMatrix();
+            }
 
-	glPushMatrix();
-	glutSolidCube(1);
-	glPopMatrix();
+            desplazamientoZ += 2.5;
+        }
+        desplazamientoX += 1.5;
+    }
+
+//
+//    for (int z = 0; z < 4 ; z++){
+//        desplazamientoY = 0;
+//        glPushMatrix();
+//        glTranslatef(0,desplazamientoY,desplazamientoZ);
+//        pintarCaja();
+//        glPopMatrix();
+//        desplazamientoY = 1;
+//
+//    for (int x= 0; x < 3; x++){
+//        glPushMatrix();
+//        glTranslatef(0,desplazamientoY++,desplazamientoZ);
+//        pintarCaja();
+//        glPopMatrix();
+//    }
+//
+//        desplazamientoZ += 3;
+//}
+
+
+
 }
 
 
@@ -111,5 +150,37 @@ void igvEscena3D::pintarCaja() {
 
     glPopMatrix();
 
+}
+
+void igvEscena3D::setInstanciasX(int instanciasX) {
+    igvEscena3D::instanciasX = instanciasX;
+}
+
+void igvEscena3D::setInstanciasYsceneB(int instanciasY) {
+    igvEscena3D::instanciasYsceneB = instanciasY;
+}
+
+void igvEscena3D::setInstanciasZ(int instanciasZ) {
+    igvEscena3D::instanciasZ = instanciasZ;
+}
+
+int igvEscena3D::getInstanciasYsceneB() const {
+    return instanciasYsceneB;
+}
+
+int igvEscena3D::getInstanciasZ() const {
+    return instanciasZ;
+}
+
+int igvEscena3D::getInstanciasX() const {
+    return instanciasX;
+}
+
+int igvEscena3D::getInstanciasY() const {
+    return instanciasY;
+}
+
+void igvEscena3D::setInstanciasY(int instanciasY) {
+    igvEscena3D::instanciasY = instanciasY;
 }
 

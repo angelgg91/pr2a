@@ -23,8 +23,10 @@ class igvEscena3D {
 		// Atributos
 		bool ejes;
         // Declarar variables para manejar las transformaciones para la escena B
-
-
+        int instanciasYsceneB;
+		int instanciasX;
+		int instanciasY;
+		int instanciasZ;
 	public:
 		// Constructores por defecto y destructor
 		igvEscena3D();
@@ -37,7 +39,23 @@ class igvEscena3D {
 		bool get_ejes() {return ejes;};
 		void set_ejes(bool _ejes){ejes = _ejes;};
 
-    protected:
+    void setInstanciasX(int instanciasX);
+
+    void setInstanciasYsceneB(int instanciasY);
+
+    void setInstanciasZ(int instanciasZ);
+
+    int getInstanciasX() const;
+
+    int getInstanciasYsceneB() const;
+
+    int getInstanciasZ() const;
+
+	int getInstanciasY() const;
+
+	void setInstanciasY(int instanciasY);
+
+protected:
         void renderEscenaA();
         void renderEscenaB();
 		void renderEscenaC();

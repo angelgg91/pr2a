@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/user/CLionProjects/pr2a/src/igvEscena3D.cpp
-cstdlib
--
-stdio.h
--
-igvEscena3D.h
-/home/user/CLionProjects/pr2a/src/igvEscena3D.h
-
 /home/user/CLionProjects/pr2a/src/igvEscena3D.h
 GLUT/glut.h
 -
@@ -22,5 +14,27 @@ OpenGL/gl.h
 OpenGL/glu.h
 -
 GL/glut.h
+-
+
+/home/user/CLionProjects/pr2a/src/igvInterfaz.cpp
+cstdlib
+-
+igvInterfaz.h
+/home/user/CLionProjects/pr2a/src/igvInterfaz.h
+
+/home/user/CLionProjects/pr2a/src/igvInterfaz.h
+GLUT/glut.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GL/glut.h
+-
+string
+-
+igvEscena3D.h
+/home/user/CLionProjects/pr2a/src/igvEscena3D.h
+iostream
 -
 

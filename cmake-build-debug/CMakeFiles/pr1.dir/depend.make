@@ -8,7 +8,5 @@ CMakeFiles/pr1.dir/src/igvInterfaz.cpp.o: ../src/igvEscena3D.h
 CMakeFiles/pr1.dir/src/igvInterfaz.cpp.o: ../src/igvInterfaz.cpp
 CMakeFiles/pr1.dir/src/igvInterfaz.cpp.o: ../src/igvInterfaz.h
 
-CMakeFiles/pr1.dir/src/pr2a.cpp.o: ../src/igvEscena3D.h
-CMakeFiles/pr1.dir/src/pr2a.cpp.o: ../src/igvInterfaz.h
 CMakeFiles/pr1.dir/src/pr2a.cpp.o: ../src/pr2a.cpp
 
