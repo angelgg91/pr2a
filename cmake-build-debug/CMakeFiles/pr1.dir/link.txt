@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/pr1.dir/src/pr2a.cpp.o CMakeFiles/pr1.dir/src/igvInterfaz.cpp.o CMakeFiles/pr1.dir/src/igvEscena3D.cpp.o  -o pr1  /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libGL.so 
